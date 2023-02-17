@@ -32,7 +32,7 @@ jobs:
       - name: show previous git commit hash
         run: |
           ls -R
-          cat hash.txt
+          cat my-artifact/hash.txt
 
       - name: show current git commit hash
         run: echo ${{ github.sha }}
