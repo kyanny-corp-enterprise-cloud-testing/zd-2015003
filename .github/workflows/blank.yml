@@ -30,10 +30,15 @@ jobs:
         with:
           name: my-artifact
         continue-on-error: true
-    
-      - name: Display structure of downloaded files
-        run: ls -R
 
+      - name: show previous git commit hash
+        run: |
+          ls -R
+          cat hash.txt
+
+      - name: show current git commit hash
+        run: echo ${{ github.sha }}
+      
       - name: save git commit hash to text file
         run: echo ${{ github.sha }} > hash.txt
 
