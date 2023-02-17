@@ -25,11 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
-      - name: download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: my-artifact
-        continue-on-error: true
+      - name: Download artifact
+        id: download-artifact
+        uses: dawidd6/action-download-artifact@v2
 
       - name: show previous git commit hash
         run: |
